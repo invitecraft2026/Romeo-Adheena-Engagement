@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 30% 97%;
+    --foreground: 330 15% 15%;
+
+    --card: 30 25% 95%;
+    --card-foreground: 330 15% 15%;
+
+    --popover: 30 25% 95%;
+    --popover-foreground: 330 15% 15%;
+
+    --primary: 330 45% 55%;
+    --primary-foreground: 30 30% 97%;
+
+    --secondary: 280 30% 50%;
+    --secondary-foreground: 30 30% 97%;
+
+    --muted: 30 15% 90%;
+    --muted-foreground: 330 10% 45%;
+
+    --accent: 42 65% 58%;
+    --accent-foreground: 330 15% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 330 20% 85%;
+    --input: 330 20% 85%;
+    --ring: 330 45% 55%;
+
+    --radius: 0.75rem;
+
+    --wedding-pink: 340 60% 75%;
+    --wedding-purple: 290 40% 55%;
+    --wedding-ivory: 40 40% 95%;
+    --wedding-gold: 42 65% 58%;
+    --wedding-green: 130 30% 45%;
+    --wedding-dark: 280 20% 12%;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Lato', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-wedding-gold {
+    color: hsl(var(--wedding-gold));
+  }
+
+  .text-wedding-pink {
+    color: hsl(var(--wedding-pink));
+  }
+
+  .text-wedding-purple {
+    color: hsl(var(--wedding-purple));
+  }
+
+  .text-wedding-ivory {
+    color: hsl(var(--wedding-ivory));
+  }
+
+  .bg-wedding-dark {
+    background-color: hsl(var(--wedding-dark));
+  }
+
+  .bg-wedding-ivory {
+    background-color: hsl(var(--wedding-ivory));
+  }
+
+  .bg-wedding-gold {
+    background-color: hsl(var(--wedding-gold));
+  }
+
+  .border-wedding-gold {
+    border-color: hsl(var(--wedding-gold) / 0.3);
+  }
+
+  .gradient-wedding {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--wedding-pink) / 0.2),
+      hsl(var(--wedding-purple) / 0.15),
+      hsl(var(--wedding-ivory))
+    );
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--wedding-dark) / 0.5) 0%,
+      hsl(var(--wedding-dark) / 0.3) 50%,
+      hsl(var(--wedding-dark) / 0.6) 100%
+    );
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--wedding-gold) / 0.0) 0%,
+      hsl(var(--wedding-gold) / 0.5) 50%,
+      hsl(var(--wedding-gold) / 0.0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: -200% 0; }
+  50% { background-position: 200% 0; }
+}
+
+@keyframes float-petal {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% {
+    transform: translateY(110vh) translateX(100px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(30px); }
+}
+
+.animate-float-petal {
+  animation: float-petal var(--duration, 10s) var(--delay, 0s) linear infinite;
+}
+
+.animate-sway {
+  animation: sway 4s ease-in-out infinite;
+}
