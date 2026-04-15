@@ -11,10 +11,10 @@ const Footer = () => (
     >
       <Heart className="w-5 h-5 text-wedding-pink mx-auto mb-4" />
       <p className="font-heading text-wedding-ivory text-2xl mb-2">
-        Jessica & Michael
+        Adheena & Romeo
       </p>
       <p className="font-body text-wedding-ivory/50 text-sm tracking-wider">
-        December 20, 2025
+        May 24, 2026 • 5:00 PM
       </p>
       <div className="w-16 h-px bg-wedding-gold/30 mx-auto mt-6" />
       <p className="font-body text-wedding-ivory/30 text-xs mt-4">

@@ -1,22 +1,30 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, Heart } from "lucide-react";
+import { MapPin, Clock, Heart, Navigation } from "lucide-react";
 import dividerImg from "@/assets/bougainvillea-divider.png";
 
 const details = [
   {
     icon: Clock,
     title: "Ceremony",
-    lines: ["Saturday, December 20, 2025", "2:00 PM"],
+    lines: ["Saturday, May 24, 2026", "5:00 PM"],
   },
   {
     icon: MapPin,
     title: "Venue",
-    lines: ["St. Mary's Cathedral", "123 Garden Avenue, Bougainvillea Estate"],
+    lines: [
+      "St. Mary’s Syro-Malabar Church",
+      "Moonnamparambu",
+    ],
+    map: "https://www.google.com/maps/search/?api=1&query=St.+Mary’s+Syro-Malabar+Church+Moonnamparambu",
   },
   {
     icon: Heart,
     title: "Reception",
-    lines: ["The Grand Pavilion", "Dinner & Dancing to follow"],
+    lines: [
+      "LA Mirage Wedding Venue",
+      "Koratty",
+    ],
+    map: "https://www.google.com/maps/search/?api=1&query=LA+Mirage+Wedding+Venue+Koratty",
   },
 ];
 
@@ -31,7 +39,7 @@ const WeddingDetails = () => {
         transition={{ duration: 0.8 }}
       >
         <p className="font-display text-wedding-purple text-base tracking-[0.3em] uppercase mb-3">
-          Wedding Details
+          Engagement Details
         </p>
         <h3 className="font-heading text-foreground text-3xl mb-4">
           Join Us in Celebration
@@ -56,14 +64,31 @@ const WeddingDetails = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-wedding-gold/30 mb-4">
                 <detail.icon className="w-5 h-5 text-wedding-gold" />
               </div>
+
               <h4 className="font-heading text-foreground text-xl mb-2">
                 {detail.title}
               </h4>
+
               {detail.lines.map((line) => (
-                <p key={line} className="font-body text-muted-foreground text-sm leading-relaxed">
+                <p
+                  key={line}
+                  className="font-body text-muted-foreground text-sm leading-relaxed"
+                >
                   {line}
                 </p>
               ))}
+
+              {detail.map && (
+                <a
+                  href={detail.map}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-3 text-wedding-gold text-sm hover:underline"
+                >
+                  <Navigation className="w-4 h-4" />
+                  View on Map
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

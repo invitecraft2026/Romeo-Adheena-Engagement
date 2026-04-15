@@ -7,7 +7,7 @@ const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [userInteracted, setUserInteracted] = useState(false);
 
-  const musicUrl = "/willyoustill.mpeg";
+  const musicUrl = "/love story.mpeg";
 
   // Initialize audio settings
   useEffect(() => {

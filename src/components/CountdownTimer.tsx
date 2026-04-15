@@ -1,18 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-// Generate random future date (between 30 and 120 days from now)
-const getRandomWeddingDate = () => {
-  const minDays = 30;
-  const maxDays = 120;
-  const randomDays = Math.floor(Math.random() * (maxDays - minDays + 1)) + minDays;
-
-  const now = new Date();
-  now.setDate(now.getDate() + randomDays);
-  return now;
-};
-
-const WEDDING_DATE = getRandomWeddingDate();
+// Fixed wedding date: 24 May 2026, 5:00 PM
+const WEDDING_DATE = new Date("2026-05-24T17:00:00");
 
 const CountdownTimer = () => {
   const getTimeLeft = () => {

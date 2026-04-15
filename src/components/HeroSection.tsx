@@ -49,7 +49,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
         >
-          Jessica
+          Adheena
         </motion.h2>
 
         <motion.p
@@ -67,7 +67,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 1 }}
         >
-          Michael
+          Romeo
         </motion.h2>
 
         <motion.div
@@ -85,7 +85,7 @@ const HeroSection = () => {
         >
           Request the honour of your presence
           <br />
-          at their wedding celebration
+          at their Engagement celebration
         </motion.p>
       </motion.div>
     </section>

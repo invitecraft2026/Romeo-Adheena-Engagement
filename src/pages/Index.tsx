@@ -8,6 +8,7 @@ import WeddingDetails from "@/components/WeddingDetails";
 import Footer from "@/components/Footer";
 import FloatingPetals from "@/components/FloatingPetals";
 import MusicPlayer from "@/components/MusicPlayer";
+import DressCode from "@/components/Dresscode";
 
 const Index = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -31,6 +32,7 @@ const Index = () => {
           <HeroSection />
           <CountdownTimer />
           <ScratchReveal />
+          <DressCode/>
           <WeddingDetails />
           <Footer />
         </motion.div>

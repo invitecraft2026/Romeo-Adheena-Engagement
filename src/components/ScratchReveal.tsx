@@ -17,7 +17,6 @@ const ScratchReveal = () => {
     canvas.height = canvas.offsetHeight * 2;
     ctx.scale(2, 2);
 
-    // Fill with scratch cover
     const gradient = ctx.createLinearGradient(0, 0, canvas.offsetWidth, canvas.offsetHeight);
     gradient.addColorStop(0, "hsl(330, 45%, 55%)");
     gradient.addColorStop(0.5, "hsl(290, 40%, 55%)");
@@ -25,7 +24,6 @@ const ScratchReveal = () => {
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
 
-    // Add text
     ctx.fillStyle = "hsl(40, 40%, 95%)";
     ctx.font = "600 16px 'Lato', sans-serif";
     ctx.textAlign = "center";
@@ -86,7 +84,6 @@ const ScratchReveal = () => {
         </h3>
 
         <div className="relative w-full aspect-[2/1] rounded-xl overflow-hidden shadow-lg border border-wedding-gold/20">
-          {/* Revealed content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-wedding-dark">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -94,17 +91,16 @@ const ScratchReveal = () => {
               transition={{ duration: 0.6, type: "spring" }}
             >
               <p className="font-display text-wedding-gold text-sm tracking-[0.2em] uppercase mb-1">
-                December
+                May
               </p>
-              <p className="font-heading text-wedding-ivory text-5xl mb-1">20</p>
-              <p className="font-display text-wedding-gold text-lg">2025</p>
+              <p className="font-heading text-wedding-ivory text-5xl mb-1">24</p>
+              <p className="font-display text-wedding-gold text-lg">2026</p>
               <p className="font-body text-wedding-ivory/60 text-xs mt-2 tracking-wider">
-                Saturday • 2:00 PM
+                Sunday • 5:00 PM
               </p>
             </motion.div>
           </div>
 
-          {/* Scratch canvas */}
           <canvas
             ref={canvasRef}
             className={`absolute inset-0 w-full h-full cursor-pointer transition-opacity duration-700 ${
