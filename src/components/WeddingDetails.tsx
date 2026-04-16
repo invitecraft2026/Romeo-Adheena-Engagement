@@ -6,7 +6,7 @@ const details = [
   {
     icon: Clock,
     title: "Ceremony",
-    lines: ["Saturday, May 24, 2026", "5:00 PM"],
+    lines: ["Sunday, May 24, 2026", "5:00 PM"],
   },
   {
     icon: MapPin,
@@ -23,6 +23,7 @@ const details = [
     lines: [
       "LA Mirage Wedding Venue",
       "Koratty",
+      "6:30 PM – 10:00 PM",
     ],
     map: "https://www.google.com/maps/search/?api=1&query=LA+Mirage+Wedding+Venue+Koratty",
   },
@@ -41,6 +42,7 @@ const WeddingDetails = () => {
         <p className="font-display text-wedding-purple text-base tracking-[0.3em] uppercase mb-3">
           Engagement Details
         </p>
+
         <h3 className="font-heading text-foreground text-3xl mb-4">
           Join Us in Celebration
         </h3>
@@ -65,14 +67,14 @@ const WeddingDetails = () => {
                 <detail.icon className="w-5 h-5 text-wedding-gold" />
               </div>
 
-              <h4 className="font-heading text-foreground text-xl mb-2">
+              <h4 className="font-heading text-wedding-gold text-xl mb-2">
                 {detail.title}
               </h4>
 
-              {detail.lines.map((line) => (
+              {detail.lines.map((line, idx) => (
                 <p
-                  key={line}
-                  className="font-body text-muted-foreground text-sm leading-relaxed"
+                  key={idx}
+                  className="font-body text-sm leading-relaxed text-gray-900"
                 >
                   {line}
                 </p>
@@ -94,7 +96,7 @@ const WeddingDetails = () => {
         </div>
 
         <motion.div
-          className="mt-14 p-6 rounded-xl border border-wedding-gold/20 bg-wedding-ivory/50 backdrop-blur-sm"
+          className="mt-14 p-6 rounded-xl border border-wedding-gold/20 bg-wedding-ivory/60 backdrop-blur-sm"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
